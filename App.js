@@ -1,63 +1,21 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
-import Header from './src/components/Header';
-import Card from './src/components/Card';
+import Home from './src/screens/Home';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import Product from './src/screens/Product';
 
 const App = () => {
-  const image =
-    'https://static.nike.com/a/images/c_limit,w_318,f_auto/t_product_v1/88d2422d-152d-43a3-97ce-bc88aad8830c/kyrie-7-ep-play-future-basketball-shoe-FFZfk3.jpg';
-  const productName = "Kyrie 7 EP 'Play for the Future'";
-  const productCategory = "Men's Shoe";
+  const Stack = createStackNavigator();
 
   return (
-    <View>
-      <Header />
-      <ScrollView contentContainerStyle={styles.container}>
-        <Card
-          image={image}
-          productName={productName}
-          productCategory={productCategory}
-        />
-        <Card
-          image={image}
-          productName={productName}
-          productCategory={productCategory}
-        />
-        <Card
-          image={image}
-          productName={productName}
-          productCategory={productCategory}
-        />
-        <Card
-          image={image}
-          productName={productName}
-          productCategory={productCategory}
-        />
-        <Card
-          image={image}
-          productName={productName}
-          productCategory={productCategory}
-        />
-        <Card
-          image={image}
-          productName={productName}
-          productCategory={productCategory}
-        />
-      </ScrollView>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home">{props => <Home {...props} />}</Stack.Screen>
+        <Stack.Screen name="Product" component={Product} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    padding: 12,
-    paddingTop: 32,
-  },
-});
 
 export default App;

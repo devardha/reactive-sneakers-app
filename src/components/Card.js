@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, Button} from 'react-native';
 
-const Card = ({image, productName, productCategory}) => {
+const Card = ({image, productName, productCategory, navigation}) => {
   return (
     <View style={styles.card}>
       <View style={styles.cardThumbnail}>
@@ -15,6 +15,10 @@ const Card = ({image, productName, productCategory}) => {
       <Text style={styles.textTitle}>{productName}</Text>
       <Text style={styles.textSubtitle}>{productCategory}</Text>
       <Text style={styles.textPrice}>$100</Text>
+      <Button
+        onPress={() => navigation.navigate('Product')}
+        title="View Product"
+      />
     </View>
   );
 };
@@ -22,7 +26,7 @@ const Card = ({image, productName, productCategory}) => {
 const styles = StyleSheet.create({
   card: {
     width: '48%',
-    height: 280,
+    height: 320,
     backgroundColor: '#fff',
     color: '#fff',
     borderRadius: 16,
