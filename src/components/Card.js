@@ -1,32 +1,32 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Button} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-const Card = ({image, productName, productCategory, navigation}) => {
+const Card = ({image, productName, productCategory, navigation, price}) => {
+  const onPress = () => navigation.navigate('Product');
+
   return (
-    <View style={styles.card}>
-      <View style={styles.cardThumbnail}>
-        <Image
-          style={styles.thumbnail}
-          source={{
-            uri: image,
-          }}
-        />
+    <TouchableOpacity onPress={onPress} style={styles.card} activeOpacity={1}>
+      <View>
+        <View style={styles.cardThumbnail}>
+          <Image
+            style={styles.thumbnail}
+            source={{
+              uri: image,
+            }}
+          />
+        </View>
+        <Text style={styles.textTitle}>{productName}</Text>
+        <Text style={styles.textSubtitle}>{productCategory}</Text>
+        <Text style={styles.textPrice}>Rp {price}</Text>
       </View>
-      <Text style={styles.textTitle}>{productName}</Text>
-      <Text style={styles.textSubtitle}>{productCategory}</Text>
-      <Text style={styles.textPrice}>$100</Text>
-      <Button
-        onPress={() => navigation.navigate('Product')}
-        title="View Product"
-      />
-    </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
     width: '48%',
-    height: 320,
+    height: 280,
     backgroundColor: '#fff',
     color: '#fff',
     borderRadius: 16,

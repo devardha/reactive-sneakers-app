@@ -1,38 +1,26 @@
 import React from 'react';
-import {Image, View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 
 const Header = () => {
-  const logo =
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png';
-
   return (
-    <View style={styles.header}>
-      <Image source={{uri: logo}} style={styles.logo} />
+    <View style={styles.container}>
+      <Image
+        style={styles.logo}
+        source={require('../assets/images/logo.png')}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  headerText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-    fontFamily: 'notoserif',
-  },
   logo: {
-    width: 50,
-    height: 44,
-    overflow: 'visible',
-    resizeMode: 'contain',
+    width: 60,
+    height: 21.5,
+    resizeMode: 'cover',
+    marginLeft: 'auto',
   },
-  header: {
-    height: 70,
-    width: '100%',
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderColor: '#eee',
+  container: {
+    alignSelf: 'center',
   },
 });
 
