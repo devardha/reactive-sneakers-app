@@ -42,6 +42,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   header: {
+    backgroundColor: '#fff',
     height: 80,
   },
 });
