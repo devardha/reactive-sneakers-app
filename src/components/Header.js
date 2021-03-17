@@ -1,52 +1,55 @@
 import React from 'react';
-import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
 
 const Header = () => {
-  return (
-    <View>
-      <View style={styles.container}>
-        <TouchableOpacity>
-          <Icon name="menu" size={24} color="#000" />
-        </TouchableOpacity>
-        <View style={styles.logoWrapper}>
-          <Image
-            style={styles.logo}
-            source={require('../assets/images/logo.png')}
-          />
+    return (
+        <View>
+            <View style={styles.container}>
+                <TextInput style={styles.searchInput} placeholder="Search..." />
+                <TouchableOpacity>
+                    <Icon
+                        name="magnifier"
+                        size={20}
+                        color="#000"
+                        style={styles.icon}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.bag}>
+                    <Icon
+                        name="envelope"
+                        size={20}
+                        color="#000"
+                        style={styles.icon}
+                    />
+                </TouchableOpacity>
+            </View>
         </View>
-        <TouchableOpacity>
-          <Icon name="bag" size={24} color="#000" />
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+    );
 };
 
 const styles = StyleSheet.create({
-  logo: {
-    width: 60,
-    height: 21.5,
-    resizeMode: 'cover',
-  },
-  logoWrapper: {
-    position: 'absolute',
-    width: '100%',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  container: {
-    alignSelf: 'center',
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
+    icon: {
+        marginLeft: 24,
+    },
+    searchInput: {
+        height: 40,
+        borderWidth: 1,
+        flex: 1,
+        paddingHorizontal: 16,
+        borderRadius: 32,
+    },
+    bag: {
+        position: 'relative',
+    },
+    container: {
+        alignSelf: 'center',
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
 });
 
 export default Header;
