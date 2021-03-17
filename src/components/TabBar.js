@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, TouchableOpacity, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Icon from 'react-native-vector-icons/Feather';
 
 export default function TabBar({navigation}) {
     const onPress = () => {
@@ -13,22 +13,22 @@ export default function TabBar({navigation}) {
     return (
         <View style={styles.tabContainer}>
             <TouchableOpacity onPress={onPress} style={styles.iconContainer}>
-                <Icon name="home" size={20} color="#000" />
+                <Icon name="home" size={21} color="#000" />
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Home')}
                 style={styles.iconContainer}>
-                <Icon name="book-open" size={20} color="#000" />
+                <Icon name="grid" size={21} color="#000" />
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Home')}
                 style={styles.iconContainer}>
-                <Icon name="bag" size={20} color="#000" />
+                <Icon name="shopping-bag" size={21} color="#222" />
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Home')}
                 style={styles.iconContainer}>
-                <Icon name="login" size={20} color="#000" />
+                <Icon name="user" size={22} color="#000" />
             </TouchableOpacity>
         </View>
     );

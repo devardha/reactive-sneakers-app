@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     cardThumbnail: {
         width: '100%',
-        height: 280,
+        height: 300,
         backgroundColor: '#F5F5F5',
     },
     thumbnail: {
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
     productContainer: {
-        padding: 12,
+        padding: 16,
     },
     productDetails: {
         display: 'flex',

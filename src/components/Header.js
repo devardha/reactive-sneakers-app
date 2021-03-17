@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import Icon from 'react-native-vector-icons/Feather';
 
 const Header = () => {
     return (
@@ -9,16 +9,16 @@ const Header = () => {
                 <TextInput style={styles.searchInput} placeholder="Search..." />
                 <TouchableOpacity>
                     <Icon
-                        name="magnifier"
-                        size={20}
+                        name="search"
+                        size={24}
                         color="#000"
                         style={styles.icon}
                     />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.bag}>
                     <Icon
-                        name="envelope"
-                        size={20}
+                        name="mail"
+                        size={24}
                         color="#000"
                         style={styles.icon}
                     />
