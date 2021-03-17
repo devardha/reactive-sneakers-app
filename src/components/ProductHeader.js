@@ -1,11 +1,20 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
+import AntIcon from 'react-native-vector-icons/AntDesign';
 
-const Header = () => {
+const ProductHeader = ({navigation}) => {
     return (
         <View>
             <View style={styles.container}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <AntIcon
+                        name="arrowleft"
+                        size={26}
+                        color="#000"
+                        style={styles.iconBack}
+                    />
+                </TouchableOpacity>
                 <TextInput style={styles.searchInput} placeholder="Search..." />
                 <TouchableOpacity>
                     <Icon
@@ -32,6 +41,9 @@ const styles = StyleSheet.create({
     icon: {
         marginLeft: 24,
     },
+    iconBack: {
+        marginRight: 20,
+    },
     searchInput: {
         height: 40,
         borderWidth: 1,
@@ -54,4 +66,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Header;
+export default ProductHeader;

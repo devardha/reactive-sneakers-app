@@ -4,6 +4,7 @@ import {StyleSheet} from 'react-native';
 import Header from '../Header';
 import Product from '../../screens/Product';
 import Home from '../../screens/Home';
+import ProductHeader from '../ProductHeader';
 
 export default function HomeNavigation() {
     const Stack = createStackNavigator();
@@ -24,14 +25,16 @@ export default function HomeNavigation() {
                 {props => <Home {...props} />}
             </Stack.Screen>
             <Stack.Screen
-                options={{
-                    headerTitle: props => <Header {...props} />,
+                options={({navigation}) => ({
                     animationEnabled: false,
                     headerLeft: null,
-                }}
-                name="Product"
-                component={Product}
-            />
+                    headerTitle: props => (
+                        <ProductHeader {...props} navigation={navigation} />
+                    ),
+                })}
+                name="Product">
+                {props => <Product {...props} />}
+            </Stack.Screen>
         </Stack.Navigator>
     );
 }
