@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import Card from '../components/Card';
 import MainBanner from '../components/home/MainBanner';
+import ProductList from '../components/products/ProductList';
 
 const Home = ({navigation}) => {
     const products = [
@@ -53,18 +53,7 @@ const Home = ({navigation}) => {
         <View>
             <ScrollView contentContainerStyle={styles.container}>
                 <MainBanner />
-                <View style={styles.productList}>
-                    {products?.map((item, index) => (
-                        <Card
-                            key={index}
-                            image={item.image}
-                            productName={item.productName}
-                            productCategory={item.productCategory}
-                            navigation={navigation}
-                            price={item.price}
-                        />
-                    ))}
-                </View>
+                <ProductList products={products} navigation={navigation} />
             </ScrollView>
         </View>
     );
@@ -73,14 +62,7 @@ const Home = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
-    },
-    productList: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        alignItems: 'flex-start',
-        justifyContent: 'space-between',
         padding: 12,
-        paddingTop: 32,
     },
 });
 
