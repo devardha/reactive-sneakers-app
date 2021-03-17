@@ -49,15 +49,20 @@ const styles = StyleSheet.create({
     },
     textTitle: {
         marginTop: 8,
-        lineHeight: 20,
+        lineHeight: 22,
+        fontSize: 16,
+        fontFamily: 'RobotoCondensed-Regular',
     },
     textSubtitle: {
-        fontSize: 12,
+        fontSize: 14,
         marginTop: 4,
         color: '#999',
+        fontFamily: 'RobotoCondensed-Regular',
     },
     textPrice: {
         marginTop: 8,
+        fontSize: 15,
+        fontFamily: 'RobotoCondensed-Regular',
     },
 });
 

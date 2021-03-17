@@ -19,7 +19,7 @@ const Product = () => {
                         Jordan Air Max 200 XX
                     </Text>
                     <View style={styles.productDetails}>
-                        <Text style={styles.productPrice}>1,799,000</Text>
+                        <Text style={styles.productPrice}>Rp 1,799,000</Text>
                     </View>
                 </View>
                 <View style={styles.productContainer}>
@@ -57,17 +57,20 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     productTitle: {
-        fontSize: 26,
+        fontSize: 28,
+        fontFamily: 'RobotoCondensed-Regular',
     },
     productPrice: {
-        fontSize: 16,
+        fontSize: 20,
+        fontFamily: 'RobotoCondensed-Regular',
         marginTop: 8,
         color: 'black',
     },
     productDesc: {
-        fontSize: 16,
+        fontSize: 17,
         lineHeight: 28,
         marginTop: 4,
+        fontFamily: 'RobotoCondensed-Regular',
     },
     productContainer: {
         padding: 16,

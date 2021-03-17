@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#fff',
-        fontWeight: 'bold',
+        fontFamily: 'RobotoCondensed-Bold',
+        fontSize: 16,
     },
 });
 
